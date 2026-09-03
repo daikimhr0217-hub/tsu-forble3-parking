@@ -46,12 +46,13 @@
     if (e.key === "Escape") closeLightbox();
   });
 
-  /* ---- 電話CTAクリックをGA4に送信（gtag未導入時は何もしない） ---- */
+  /* ---- 電話CTAクリックをGA4に送信（gtag未導入・未読み込み時も電話リンクは通常どおり動作） ---- */
   document.querySelectorAll("a[data-cta]").forEach(function (link) {
     link.addEventListener("click", function () {
       if (typeof window.gtag === "function") {
         window.gtag("event", "phone_click", {
-          cta_location: link.getAttribute("data-cta"),
+          cta_location: link.getAttribute("data-cta"), // hero / campaign / footer / sticky など押された場所
+          phone_number: link.getAttribute("href").replace("tel:", ""),
         });
       }
     });
