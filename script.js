@@ -4,6 +4,19 @@
 (function () {
   "use strict";
 
+  // ==========================================================
+  // ▼ キャンペーン残り台数の更新はここだけでOK ▼
+  // 先着10台キャンペーンの残り台数が減ったら、この数字だけ書き換えてください。
+  // 例: 10 → 8 → 5
+  // ページ内の「現在 残り○台」表示（ファーストビュー・キャンペーンセクション）に
+  // 自動で反映されます。
+  var REMAINING_SLOTS = 10;
+  // ▲ ここまで ▲
+  // ==========================================================
+  document.querySelectorAll("[data-remaining-slots]").forEach(function (el) {
+    el.textContent = REMAINING_SLOTS;
+  });
+
   /* ---- ギャラリー画像の拡大表示 ---- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");

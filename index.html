@@ -18,13 +18,19 @@
 <link rel="preconnect" href="https://www.google.com">
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Analytics 4（導入時はG-XXXXXXXXXXを実IDに置き換えてコメントを外す）
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!--
+  GA4（Googleアナリティクス4）を利用する場合：
+  1. Google Analyticsで測定ID（G-XXXXXXXXXX形式）を発行する
+  2. 下の2箇所にある YOUR_MEASUREMENT_ID を、発行された測定IDに置き換える
+  3. このコメント（この行を含む前後のコメント記号）を外して有効化する
+  （現時点では測定IDが未設定のため、コメントアウトしたままにしています）
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'YOUR_MEASUREMENT_ID');
 </script>
 -->
 
@@ -38,6 +44,8 @@
   <div class="hero-inner">
     <p class="hero-eyebrow">津フォーブルⅢ 月極駐車場</p>
     <p class="campaign-label">期間限定・先着10台</p>
+    <!-- 残り台数はscript.jsのREMAINING_SLOTSから自動で入ります -->
+    <p class="remaining-badge">現在 残り<span data-remaining-slots>10</span>台</p>
 
     <div class="hero-main">
       <span class="hero-main-num">6か月</span>
@@ -46,11 +54,13 @@
 
     <p class="hero-sub-price">通常月額 3,300円（税込）</p>
 
-    <p class="hero-copy">三重大学 徒歩約10分／平置き・外部契約OK</p>
+    <p class="hero-copy">空きあり・外部契約OK</p>
+    <p class="hero-copy-sub">三重大学近く（徒歩約10分）</p>
 
-    <a href="tel:0592216868" class="btn btn-cta" data-cta="hero">
-      <span class="btn-icon" aria-hidden="true">📞</span>空き状況を電話で問い合わせる
+    <a href="tel:0592216868" id="phone-cta" class="btn btn-cta phone-cta" data-cta="hero">
+      <span class="btn-icon" aria-hidden="true">📞</span>空き状況を確認する
     </a>
+    <p class="hero-tel-caption">賃貸コーポレーション津支店へ電話</p>
 
     <p class="hero-note">※12か月以上ご利用の方が対象</p>
   </div>
@@ -129,6 +139,8 @@
   <div class="campaign-box">
     <p class="campaign-big"><span class="campaign-num">6か月</span>駐車料金無料</p>
     <p class="campaign-normal">通常 月額3,300円（税込）</p>
+    <!-- 残り台数はscript.jsのREMAINING_SLOTSから自動で入ります -->
+    <p class="campaign-remaining">現在 残り<span data-remaining-slots>10</span>台</p>
   </div>
 
   <ul class="campaign-list">
@@ -139,7 +151,7 @@
     <li>空き状況によりキャンペーン内容を変更、終了する場合あり</li>
   </ul>
 
-  <a href="tel:0592216868" class="btn btn-cta btn-cta-light" data-cta="campaign">
+  <a href="tel:0592216868" class="btn btn-cta btn-cta-light phone-cta" data-cta="campaign">
     <span class="btn-icon" aria-hidden="true">📞</span>キャンペーン対象か確認する
   </a>
 </section>
@@ -189,7 +201,7 @@
   <p class="contact-tel-label">電話番号</p>
   <p class="contact-tel-number">059-221-6868</p>
 
-  <a href="tel:0592216868" class="btn btn-cta btn-cta-large" data-cta="footer">
+  <a href="tel:0592216868" class="btn btn-cta btn-cta-large phone-cta" data-cta="footer">
     <span class="btn-icon" aria-hidden="true">📞</span>059-221-6868 に電話する
   </a>
 
@@ -204,7 +216,7 @@
 
 <!-- ============ 固定CTA（スマホのみ） ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="tel:0592216868" data-cta="sticky">
+  <a href="tel:0592216868" class="phone-cta" data-cta="sticky">
     <span class="btn-icon" aria-hidden="true">📞</span>空き状況を電話で確認
   </a>
 </div>

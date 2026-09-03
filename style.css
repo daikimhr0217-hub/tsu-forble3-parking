@@ -108,7 +108,14 @@ h1,h2,p{margin:0;}
   font-size:.85rem;
   padding:.4em 1em;
   border-radius:999px;
-  margin-bottom:14px;
+  margin-bottom:10px;
+}
+/* 「6か月無料」より一段弱い強調。目立たせつつ主役にはしない */
+.remaining-badge{
+  font-size:.85rem;
+  font-weight:700;
+  color:#ffcbb5;
+  margin-bottom:12px;
 }
 .hero-main{
   display:flex;
@@ -137,10 +144,22 @@ h1,h2,p{margin:0;}
 .hero-copy{
   font-size:1.05rem;
   font-weight:600;
+  margin-bottom:4px;
+}
+/* 三重大学の表記はここでは控えめに（優先度は月額・空き状況より下） */
+.hero-copy-sub{
+  font-size:.88rem;
+  font-weight:400;
+  opacity:.8;
   margin-bottom:22px;
 }
+.hero-tel-caption{
+  margin-top:10px;
+  font-size:.82rem;
+  opacity:.8;
+}
 .hero-note{
-  margin-top:12px;
+  margin-top:8px;
   font-size:.78rem;
   opacity:.75;
 }
@@ -259,6 +278,14 @@ h1,h2,p{margin:0;}
   font-size:.95rem;
   color:var(--ink-soft);
   text-decoration:line-through;
+}
+/* 「6か月無料」より一段弱い強調 */
+.campaign-remaining{
+  margin-top:10px;
+  font-size:.9rem;
+  font-weight:700;
+  color:var(--hot-dark);
+  opacity:.85;
 }
 .campaign-list{
   margin-bottom:26px;
