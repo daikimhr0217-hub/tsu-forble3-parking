@@ -1,0 +1,374 @@
+/* ==========================================================
+   津フォーブルⅢ 月極駐車場 LP
+   モバイルファースト / 白背景ベース / 6か月無料のみ赤〜オレンジで強調
+   ========================================================== */
+
+:root{
+  --ink:#1f2937;
+  --ink-soft:#4b5563;
+  --line:#e5e7eb;
+  --bg:#ffffff;
+  --bg-alt:#f7f7f5;
+  --accent:#0f766e;       /* 落ち着いたグリーン系（電話・案内系ボタン） */
+  --accent-dark:#0b5c56;
+  --hot:#ff5722;          /* 「6か月無料」専用の目立つ色 */
+  --hot-dark:#d84315;
+  --hot-bg:#fff3ee;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,p{margin:0;}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5em;
+  width:100%;
+  max-width:420px;
+  padding:1.05em 1.2em;
+  border-radius:999px;
+  font-size:1.15rem;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+}
+.btn-icon{font-size:1.15em;}
+
+.btn-cta{
+  background:var(--hot);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(255,87,34,.35);
+}
+.btn-cta:active{background:var(--hot-dark);}
+.btn-cta-light{background:#fff;color:var(--hot-dark);}
+.btn-cta-large{font-size:1.3rem;padding:1.2em 1.2em;}
+
+.btn-outline{
+  margin-top:14px;
+  background:#fff;
+  color:var(--accent);
+  border:2px solid var(--accent);
+}
+
+/* ---------- SECTION 1: ファーストビュー ---------- */
+.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:#12312e;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  background-color:#12312e; /* 写真未設置時のフォールバック */
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(10,25,23,.55) 0%, rgba(10,25,23,.55) 35%, rgba(8,20,18,.88) 100%);
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+  padding:32px 20px 28px;
+  color:#fff;
+  text-align:center;
+}
+.hero-eyebrow{
+  font-size:1rem;
+  font-weight:600;
+  opacity:.92;
+  margin-bottom:10px;
+}
+.campaign-label{
+  display:inline-block;
+  background:#fff;
+  color:var(--hot-dark);
+  font-weight:700;
+  font-size:.85rem;
+  padding:.4em 1em;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+.hero-main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1.1;
+  margin-bottom:8px;
+}
+.hero-main-num{
+  font-size:3.4rem;
+  font-weight:800;
+  color:#ffb199;
+}
+.hero-main-text{
+  font-size:2.3rem;
+  font-weight:800;
+  margin-top:2px;
+}
+.hero-main .zero{color:var(--hot);}
+.hero-sub-price{
+  font-size:1.05rem;
+  text-decoration:line-through;
+  opacity:.8;
+  margin-bottom:14px;
+}
+.hero-copy{
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:22px;
+}
+.hero-note{
+  margin-top:12px;
+  font-size:.78rem;
+  opacity:.75;
+}
+
+/* ---------- 共通セクション ---------- */
+.section{
+  padding:52px 20px;
+  max-width:720px;
+  margin:0 auto;
+}
+.section-alt{background:var(--bg-alt);max-width:none;}
+.section-alt > *{max-width:720px;margin-left:auto;margin-right:auto;}
+.section-title{
+  font-size:1.5rem;
+  font-weight:800;
+  text-align:center;
+  margin-bottom:28px;
+}
+
+/* ---------- SECTION 2: 特徴カード ---------- */
+.card-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.feature-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px 14px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.feature-icon{font-size:1.8rem;margin-bottom:8px;}
+.feature-label{font-size:.8rem;color:var(--ink-soft);font-weight:600;margin-bottom:4px;}
+.feature-value{font-size:1.05rem;font-weight:700;}
+
+/* ---------- SECTION 3: ギャラリー ---------- */
+.gallery{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:8px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.gallery-item{
+  flex:0 0 78%;
+  scroll-snap-align:start;
+  border:none;
+  padding:0;
+  background:none;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+}
+.gallery-item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  padding:20px;
+}
+.lightbox[hidden]{display:none;}
+.lightbox img{max-height:90vh;border-radius:8px;}
+.lightbox-close{
+  position:absolute;
+  top:16px;right:16px;
+  width:44px;height:44px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+
+/* ---------- SECTION 4: キャンペーン ---------- */
+.section-campaign{
+  background:linear-gradient(180deg,var(--hot-bg) 0%, #fff 100%);
+  max-width:none;
+  padding:52px 20px;
+}
+.section-campaign > *{max-width:600px;margin-left:auto;margin-right:auto;}
+.section-title-light{color:var(--hot-dark);}
+.campaign-box{
+  background:#fff;
+  border:2px solid var(--hot);
+  border-radius:var(--radius);
+  padding:26px 16px;
+  text-align:center;
+  margin-bottom:24px;
+}
+.campaign-big{
+  font-size:1.9rem;
+  font-weight:800;
+  color:var(--hot-dark);
+  margin-bottom:6px;
+}
+.campaign-num{
+  display:block;
+  font-size:2.6rem;
+  line-height:1.15;
+}
+.campaign-normal{
+  font-size:.95rem;
+  color:var(--ink-soft);
+  text-decoration:line-through;
+}
+.campaign-list{
+  margin-bottom:26px;
+}
+.campaign-list li{
+  position:relative;
+  padding-left:1.4em;
+  margin-bottom:10px;
+  font-size:.95rem;
+  color:var(--ink-soft);
+}
+.campaign-list li::before{
+  content:"・";
+  position:absolute;
+  left:0;
+}
+.section-campaign .btn-cta{
+  background:var(--hot);
+  color:#fff;
+  display:flex;
+  margin:0 auto;
+}
+
+/* ---------- SECTION 5: アクセス ---------- */
+.address{
+  text-align:center;
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:20px;
+}
+.map-wrap{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+#access .btn-outline{display:flex;margin:0 auto;}
+.access-note{
+  text-align:center;
+  margin-top:14px;
+  font-weight:600;
+  color:var(--accent-dark);
+}
+
+/* ---------- SECTION 6: おすすめ ---------- */
+.recommend-list li{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 18px;
+  margin-bottom:12px;
+  font-size:1rem;
+  font-weight:600;
+}
+
+/* ---------- SECTION 7: 問い合わせ ---------- */
+.section-contact{
+  text-align:center;
+  background:var(--bg-alt);
+  max-width:none;
+  padding:56px 20px 100px;
+}
+.section-contact > *{max-width:480px;margin-left:auto;margin-right:auto;}
+.contact-company{font-size:1.05rem;font-weight:700;margin-bottom:18px;}
+.contact-tel-label{font-size:.85rem;color:var(--ink-soft);margin-bottom:2px;}
+.contact-tel-number{
+  font-size:2.1rem;
+  font-weight:800;
+  margin-bottom:22px;
+  letter-spacing:.02em;
+}
+.section-contact .btn-cta{display:flex;margin:0 auto;}
+.contact-note{
+  margin-top:22px;
+  font-size:.9rem;
+  color:var(--ink-soft);
+}
+
+/* ---------- 固定CTA（スマホのみ） ---------- */
+.sticky-cta{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:50;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:#fff;
+  border-top:1px solid var(--line);
+  box-shadow:0 -4px 14px rgba(0,0,0,.08);
+}
+.sticky-cta a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5em;
+  width:100%;
+  padding:.95em 1em;
+  border-radius:999px;
+  background:var(--hot);
+  color:#fff;
+  font-weight:700;
+  font-size:1.05rem;
+}
+body{padding-bottom:78px;}
+
+@media (min-width:900px){
+  .sticky-cta{display:none;}
+  body{padding-bottom:0;}
+  .hero-main-num{font-size:4.2rem;}
+  .hero-main-text{font-size:2.8rem;}
+  .card-grid{grid-template-columns:repeat(3,1fr);}
+  .gallery-item{flex:0 0 32%;}
+}
