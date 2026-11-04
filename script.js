@@ -10,7 +10,7 @@
   // 例: 10 → 8 → 5
   // ページ内の「現在 残り○台」表示（ファーストビュー・キャンペーンセクション）に
   // 自動で反映されます。
-  var REMAINING_SLOTS = 10;
+  var REMAINING_SLOTS = 8;
   // ▲ ここまで ▲
   // ==========================================================
   document.querySelectorAll("[data-remaining-slots]").forEach(function (el) {
