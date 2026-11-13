@@ -389,6 +389,19 @@ h1,h2,p{margin:0;}
   font-weight:700;
   font-size:1.05rem;
 }
+.sticky-cta{display:flex;gap:8px;}
+.sticky-cta a.phone-cta{flex:1 1 auto;width:auto;}
+.sticky-cta a.sticky-hourly{
+  flex:0 0 auto;
+  width:auto;
+  padding:.5em 1em;
+  background:#fff;
+  color:var(--accent);
+  border:2px solid var(--accent);
+  font-size:.8rem;
+  line-height:1.25;
+  text-align:center;
+}
 body{padding-bottom:78px;}
 
 @media (min-width:900px){
@@ -398,4 +411,96 @@ body{padding-bottom:78px;}
   .hero-main-text{font-size:2.8rem;}
   .card-grid{grid-template-columns:repeat(3,1fr);}
   .gallery-item{flex:0 0 32%;}
+}
+
+/* ==========================================================
+   追加: 利用方法の選択 / 時間貸し駐車場
+   ========================================================== */
+.hero{min-height:80vh;}
+.hero-hourly-link{
+  display:inline-block;
+  margin-top:14px;
+  font-size:.85rem;
+  color:#fff;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  opacity:.9;
+}
+
+.chooser{padding-bottom:36px;}
+.chooser .section-title{font-size:1.3rem;margin-bottom:12px;}
+.chooser-lead{
+  text-align:center;
+  font-size:.92rem;
+  color:var(--ink-soft);
+  margin-bottom:20px;
+}
+.chooser-grid{display:grid;gap:14px;}
+.chooser-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding:20px 18px;
+  border-radius:var(--radius);
+  text-align:center;
+}
+.chooser-monthly{
+  background:var(--hot-bg);
+  border:2px solid var(--hot);
+  box-shadow:var(--shadow);
+}
+.chooser-hourly{
+  background:#fff;
+  border:2px solid var(--accent);
+}
+.chooser-tag{
+  align-self:center;
+  background:var(--hot);
+  color:#fff;
+  font-size:.75rem;
+  font-weight:700;
+  padding:.2em .9em;
+  border-radius:999px;
+}
+.chooser-name{font-size:1.3rem;font-weight:800;}
+.chooser-monthly .chooser-name{color:var(--hot-dark);}
+.chooser-hourly .chooser-name{color:var(--accent-dark);font-size:1.1rem;}
+.chooser-desc{font-size:.9rem;color:var(--ink-soft);}
+.chooser-go{font-size:.9rem;font-weight:700;margin-top:4px;}
+.chooser-monthly .chooser-go{color:var(--hot-dark);}
+.chooser-hourly .chooser-go{color:var(--accent);}
+
+.section-hourly{scroll-margin-top:8px;}
+.hourly-lead{font-size:.95rem;margin-bottom:22px;}
+.booking-list{display:grid;gap:12px;margin-bottom:20px;}
+.btn-booking{
+  display:flex;
+  margin:0 auto;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 4px 12px rgba(15,118,110,.3);
+}
+.btn-booking:active{background:var(--accent-dark);}
+.btn-ext{font-size:.95em;}
+.hourly-notes{margin-bottom:18px;}
+.hourly-notes li{
+  position:relative;
+  padding-left:1.4em;
+  margin-bottom:6px;
+  font-size:.88rem;
+  color:var(--ink-soft);
+}
+.hourly-notes li::before{content:"※";position:absolute;left:0;}
+.hourly-monthly-hint{
+  font-size:.88rem;
+  text-align:center;
+  color:var(--ink-soft);
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.hourly-monthly-hint a{color:var(--accent);font-weight:700;text-decoration:underline;}
+
+@media (min-width:900px){
+  .chooser-grid{grid-template-columns:1fr 1fr;}
 }

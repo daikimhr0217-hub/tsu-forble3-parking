@@ -57,4 +57,15 @@
       }
     });
   });
+
+  /* ---- 時間貸し予約リンクのクリックをGA4に送信（リンク自体はgtagの有無に関係なく動作） ---- */
+  document.querySelectorAll("a[data-booking]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "booking_click", {
+          booking_site: link.getAttribute("data-booking"), // akippa / tokup
+        });
+      }
+    });
+  });
 })();
